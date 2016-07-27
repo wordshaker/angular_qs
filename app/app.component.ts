@@ -2,15 +2,14 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'my-app',
-    template: `
-    <h1>{{title}}</h1>
-    <div [style.color] = "wardsColor">
-        Hello {{name}}
-    </div>
-    `
+    templateUrl: 'app/app.component.html'
 })
 export class AppComponent { 
     title = 'Customer App';
     name = 'Superman';
     wardsColor ='blue';
+    
+    changeSuitColor(){
+        this.wardsColor = this.wardsColor ==='blue' ? 'red' : 'blue';
+    }
 }
