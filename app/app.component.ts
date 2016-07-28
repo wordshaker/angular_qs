@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 export class AppComponent { 
     title = 'Customer App';
     name = 'Superman';
-    wardsColor ='blue';
-    
+    wardsColor ='green';
+    customers=[
+        {id: 1, name:'Ward'},
+        {id: 2, name:'Bill'},
+        {id: 3, name:'Ted'},
+        {id: 4, name:'Nancy'}
+    ]
     changeSuitColor(){
         this.wardsColor = this.wardsColor ==='blue' ? 'red' : 'blue';
     }
