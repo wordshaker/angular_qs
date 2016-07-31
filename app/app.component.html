@@ -6,8 +6,4 @@
 <button (click) = "changeSuitColor()"> Change Suit Color</button>
 <br/>
 
-<ul>
-    <li *ngFor="#customer of customers">
-        <my-customer [customer]="customer"></my-customer>
-    </li>
-</ul>
+<app-customers></app-customers>

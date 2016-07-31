@@ -1,13 +1,16 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-    selector: 'appcustomer',
-    templateUrl: 'app/customer/customer.component.html'
+  moduleId: module.id,
+  selector: 'app-customer', // <app-customer>
+  templateUrl: 'customer.component.html'
 })
+
 export class CustomerComponent implements OnInit{
-    customer:{is:number, name: string}
     
-    constructor(){}
+    @Input() customer: {id:number, name: string};
+    
+    myColor = 'purple';
     
     ngOnInit(){}
 }
