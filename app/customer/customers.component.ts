@@ -1,4 +1,6 @@
 import {Component, OnInit } from '@angular/core';
+//import {Observable} from 'rxjs/Rx';
+
 import { CustomerComponent } from './customer.component';
 import { CustomerService } from './customer.service';
 
@@ -6,16 +8,19 @@ import { CustomerService } from './customer.service';
   moduleId: module.id,
   selector: 'app-customers',
   templateUrl: 'customers.component.html',
-  directives: [CustomerComponent],
-  providers: [CustomerService]
+  directives: [CustomerComponent]
 })
 
 export class CustomersComponent implements OnInit{
-    customers:any[];
+    customers: any[];
     
     constructor(private _customerService : CustomerService){}
     
     ngOnInit(){
-        this.customers = this._customerService.getCustomers();
+        this._customerService.getCustomers_RxObservable()
+        .subscribe(
+        (customers) => this.customers = customers,
+        (err) => {console.log(err);} //show nice message
+        );
     }
 }
